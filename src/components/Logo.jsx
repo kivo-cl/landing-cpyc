@@ -2,7 +2,7 @@
 export default function Logo({ size = 60, variant = 'color' }) {
   return (
     <img
-      src="/logo.svg"
+      src={`${import.meta.env.BASE_URL}logo.svg`}
       alt="Contigo Pan y Cebolla"
       width={size}
       height={size}
