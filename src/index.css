@@ -1,0 +1,193 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Cocogoose Pro – familia completa ─── */
+@font-face {
+  font-family: 'Cocogoose';
+  src: url('/fonts/cocogoose-regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Cocogoose';
+  src: url('/fonts/cocogoose-italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Cocogoose';
+  src: url('/fonts/cocogoose-bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Cocogoose';
+  src: url('/fonts/cocogoose-bold-italic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Cocogoose';
+  src: url('/fonts/cocogoose-light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Cocogoose';
+  src: url('/fonts/cocogoose-light-italic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Cocogoose';
+  src: url('/fonts/cocogoose-semilight.ttf') format('truetype');
+  font-weight: 350;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Cocogoose';
+  src: url('/fonts/cocogoose-semilight-italic.ttf') format('truetype');
+  font-weight: 350;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Cocogoose';
+  src: url('/fonts/cocogoose-ultralight.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Cocogoose';
+  src: url('/fonts/cocogoose-ultralight-italic.ttf') format('truetype');
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Cocogoose';
+  src: url('/fonts/cocogoose-thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Cocogoose';
+  src: url('/fonts/cocogoose-thin-italic.ttf') format('truetype');
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Cocogoose';
+  src: url('/fonts/cocogoose-darkmode.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Cocogoose';
+  src: url('/fonts/cocogoose-darkmode-italic.ttf') format('truetype');
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Cocogoose Letterpress';
+  src: url('/fonts/cocogoose-letterpress.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Lato', Arial, sans-serif;
+    color: #1d1d1b;
+    background-color: #e4ded6;
+  }
+}
+
+/* Cocogoose con fallback seguro */
+.font-display {
+  font-family: 'Cocogoose', 'Arial Black', 'Arial', sans-serif;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-cafe text-white font-lato font-bold py-3 px-8 rounded-full transition-all duration-300 hover:bg-cafe-dark hover:shadow-lg active:scale-95 inline-block;
+  }
+
+  .btn-outline {
+    @apply border-2 border-cafe text-cafe font-lato font-bold py-3 px-8 rounded-full transition-all duration-300 hover:bg-cafe hover:text-white active:scale-95 inline-block;
+  }
+
+  .btn-outline-white {
+    @apply border-2 border-white text-white font-lato font-bold py-3 px-8 rounded-full transition-all duration-300 hover:bg-white hover:text-negro active:scale-95 inline-block;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-xl;
+  }
+}
+
+section[id] {
+  scroll-margin-top: 80px;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #e4ded6; }
+::-webkit-scrollbar-thumb { background: #b0916c; border-radius: 3px; }
+
+/* ─── Testimonials endless slider ─── */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 55s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* ─── WhatsApp float button ─── */
+.whatsapp-float {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 999;
+  width: 58px;
+  height: 58px;
+  background: #25d366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.45);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 28px rgba(37, 211, 102, 0.55);
+}
