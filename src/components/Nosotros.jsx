@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ArrowRight } from 'lucide-react'
+import { trackWhatsAppClick } from '../utils/analytics'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -86,6 +87,7 @@ export default function Nosotros() {
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary inline-flex items-center gap-2"
+              onClick={() => trackWhatsAppClick('nosotros')}
             >
               Cotiza Aquí <ArrowRight size={18} />
             </a>

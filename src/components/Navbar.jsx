@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Menu, X, Phone } from 'lucide-react'
 import Logo from './Logo'
+import { trackWhatsAppClick } from '../utils/analytics'
 
 const links = [
   { label: 'Inicio', href: '#inicio' },
@@ -55,7 +56,7 @@ export default function Navbar() {
               <Phone size={15} />
               +56 9 6657 1472
             </a>
-            <a href="https://wa.me/56966571472?text=Hola%2C%20me%20gustar%C3%ADa%20cotizar%20un%20evento" target="_blank" rel="noopener noreferrer" className="btn-primary text-sm py-2.5 px-6">
+            <a href="https://wa.me/56966571472?text=Hola%2C%20me%20gustar%C3%ADa%20cotizar%20un%20evento" target="_blank" rel="noopener noreferrer" className="btn-primary text-sm py-2.5 px-6" onClick={() => trackWhatsAppClick('navbar_desktop')}>
               Cotiza aquí
             </a>
           </div>
@@ -85,7 +86,7 @@ export default function Navbar() {
                 {l.label}
               </a>
             ))}
-            <a href="https://wa.me/56966571472?text=Hola%2C%20me%20gustar%C3%ADa%20cotizar%20un%20evento" target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)} className="btn-primary text-center mt-2">
+            <a href="https://wa.me/56966571472?text=Hola%2C%20me%20gustar%C3%ADa%20cotizar%20un%20evento" target="_blank" rel="noopener noreferrer" onClick={() => { setOpen(false); trackWhatsAppClick('navbar_mobile') }} className="btn-primary text-center mt-2">
               Cotiza aquí
             </a>
           </nav>

@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { Send, Phone, Mail, Instagram } from 'lucide-react'
+import { trackWhatsAppClick } from '../utils/analytics'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -51,6 +52,7 @@ export default function Cotizar() {
       form.mensaje   ? `💬 *Detalles:* ${form.mensaje}`                         : null,
     ].filter(Boolean).join('\n')
 
+    trackWhatsAppClick('formulario')
     window.open(
       `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(lines)}`,
       '_blank',

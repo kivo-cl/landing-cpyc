@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { MapPin, ChevronDown } from 'lucide-react'
+import { trackWhatsAppClick } from '../utils/analytics'
 
 const CDN = 'https://d9hhrg4mnvzow.cloudfront.net/www.contigopanycebolla.cl'
 const HERO_BG = `${CDN}/a9093328-whatsapp-image-2024-03-05-at-15-34-30_10zl0nq0zl0l200001c01o.jpeg`
@@ -68,6 +69,7 @@ export default function Hero() {
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary text-base px-10 py-4 shadow-lg shadow-cafe/30"
+              onClick={() => trackWhatsAppClick('hero')}
             >
               Cotiza Aquí
             </a>
